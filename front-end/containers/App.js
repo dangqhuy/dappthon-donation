@@ -4,7 +4,7 @@ import Header from './Header'
 import Menu from './Menu'
 import HomePage from './HomePage'
 import Events from './Events'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 class App extends React.Component {
     render() {
