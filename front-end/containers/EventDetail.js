@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Plan from '../components/Plan'
 
 class EventDetail extends React.Component {
 
@@ -10,12 +11,12 @@ class EventDetail extends React.Component {
             <div className="col-lg-3 order-lg-1">
               <div className="text-center"><h3>Event name</h3></div>
               <div className="list-group list-group-transparent mb-0">
-                <a href="../docs/index.html" className="list-group-item list-group-item-action active"><span className="icon mr-3"><i className="fa fa-flag"></i></span>Introduction</a>
-              </div>
-              <div className="list-group list-group-transparent mb-0">
-                <a href="../docs/alerts.html" className="list-group-item list-group-item-action"><span className="icon mr-3"><i className="fa fa-exclamation-triangle"></i></span>Alerts</a>
-                <a href="../docs/avatars.html" className="list-group-item list-group-item-action"><span className="icon mr-3"><i className="fa fa-user"></i></span>Avatars</a>
-                <a href="../docs/buttons.html" className="list-group-item list-group-item-action"><span className="icon mr-3"><i className="fa fa-plus-square"></i></span>Buttons</a>
+                <div className="timeline-custom">
+                  <ul className="timeline">
+                    <Plan/>
+                    <Plan/>
+                  </ul>
+                </div>
               </div>
             </div>
             <div className="col-lg-9">

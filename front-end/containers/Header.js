@@ -10,7 +10,7 @@ class Header extends React.Component {
           <div className="col-lg order-lg-first">
                 <ul className="nav nav-tabs border-0 flex-column flex-lg-row">
                   <li className="nav-item">
-                    <NavLink to="/" className="nav-link"><i className="fa fa-home"></i> Home</NavLink>
+                    <NavLink to="/" className="nav-link text-"><i className="fa fa-home"></i> Home</NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink to="/events/:id" className="nav-link"><i className="fa fa-bars"></i>Events</NavLink>
