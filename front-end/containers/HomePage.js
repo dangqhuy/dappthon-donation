@@ -26,7 +26,13 @@ class HomePage extends React.Component {
           </div>
         </div>
         </div>
+        <div className="my-3 my-md-5">
+        <div className="container">
+          <div className="row row-cards row-deck">
         <Groups/>
+        </div>
+        </div>
+        </div>
       </div>
     )
   }

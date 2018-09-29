@@ -5,9 +5,7 @@ import * as image2 from '../assets/images/alex.jpg'
 
 const Group = (props) => {
   return(
-    <div className="my-3 my-md-5">
-        <div className="row row-cards">
-          <div className="col-sm-6 col-lg-4">
+      <div className= "col-sm-6 col-lg-4">
             <div className="card p-3">
               <a href="javascript:void(0)" className="mb-3">
                 <img src={image2} alt="Photo by Nathan Guerrero" className="rounded" />
@@ -27,9 +25,7 @@ const Group = (props) => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+            </div>
   )
 }
 
