@@ -4,7 +4,7 @@ import Header from './Header'
 import Menu from './Menu'
 import HomePage from './HomePage'
 import Events from './Events'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {
     render() {
@@ -13,12 +13,8 @@ class App extends React.Component {
                 <div className="page-main">
                     <Header />
                     <Menu />
-                    <BrowserRouter>
-                        <div>
-                            <Route exact path="/" component={HomePage}></Route>
-                            <Route path="/events/:id" component={Events}></Route>
-                        </div>
-                    </BrowserRouter>
+                    <Route exact path="/" component={HomePage}/>
+                    <Route path="/events/:id" component={Events}/>
                 </div>
             </div>
         )
