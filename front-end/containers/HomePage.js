@@ -1,10 +1,35 @@
 import * as React from 'react'
-import Groups from './Groups'
-import Event from '../components/Event'
+import { Groups } from './Groups'
+import { API_URL } from '../config'
 
 class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
+ 
+  state = {
+    groups:[]
+  }
+
+  fetchGroups = () => {
+    fetch(`${API_URL}/api/v1/groups`,{
+      mode: 'cors',
+      method: 'GET',
+      credentials: 'include',
+      
+      headers: {
+         'Content-Type': 'application/json',
+       },
+
+      })
+      .then(resp => resp.json())
+      .then(groups => {
+        this.setState({
+          groups: groups
+        })
+        console.log(groups)
+      })
+  }
+
+  componentDidMount(){
+    this.fetchGroups();
   }
 
   render() {
@@ -12,10 +37,10 @@ class HomePage extends React.Component {
       <div>
         <div className="container">
           <div className="page-header">
-          <h1 className="page-title">
-          Company
-        </h1>
-        <div className="page-subtitle">1 - 12 of 1713 photos</div>
+            <h1 className="page-title">
+            company
+            </h1>
+          <div className="page-subtitle">1 - 12 of 1713 photos</div>
           <div className="page-options d-flex">
             <div className="input-icon ml-2">
               <span className="input-icon-addon">
@@ -25,15 +50,15 @@ class HomePage extends React.Component {
             </div>
           </div>
         </div>
-        </div>
-        <div className="my-3 my-md-5">
+      </div>
+      <div className="my-3 my-md-5">
         <div className="container">
           <div className="row row-cards row-deck">
-        <Groups/>
-        </div>
-        </div>
+            <Groups/>
+          </div>
         </div>
       </div>
+    </div>
     )
   }
 }
