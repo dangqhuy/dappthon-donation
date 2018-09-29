@@ -41,7 +41,7 @@ const bundle = fuse.bundle("app")
     .instructions(" > app.js")
 if (!production) {
     fuse.dev({ port: 4444, fallback: 'index.html' })
-    bundle.hmr().watch()
+    bundle.hmr().watch("")
 }
 
 fuse.run();
