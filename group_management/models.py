@@ -15,7 +15,7 @@ class Group(BaseModel):
 
 
 class Event(BaseModel):
-    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name='events')
     status = models.CharField('Status', max_length=250)
     title = models.CharField(max_length=250)
     begin = models.DateTimeField()
