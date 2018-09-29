@@ -25,11 +25,12 @@ class HomePage extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        
         <div className="my-3 my-md-5">
         <div className="row row-cards">
           <Groups />
         </div>
+      </div>
       </div>
       </div>
     )

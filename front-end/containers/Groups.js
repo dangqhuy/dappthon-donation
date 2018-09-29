@@ -37,6 +37,9 @@ class Groups extends React.Component {
     return (
       <React.Fragment>
         <Group />
+        <Group />
+        <Group />
+        <Group />
       </React.Fragment>
     )
   }
