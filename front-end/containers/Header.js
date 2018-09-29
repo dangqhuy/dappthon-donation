@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import { NavLink } from 'react-router-dom'
 class Header extends React.Component {
 
   render() {
@@ -7,15 +7,29 @@ class Header extends React.Component {
       <div className="header py-4">
         <div className="container">
           <div className="d-flex">
+          <div className="col-lg order-lg-first">
+                <ul className="nav nav-tabs border-0 flex-column flex-lg-row">
+                  <li className="nav-item">
+                    <NavLink to="/" className="nav-link"><i className="fa fa-home"></i> Home</NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink to="/events/:id" className="nav-link"><i className="fa fa-bars"></i>Events</NavLink>
+                  </li>
+                </ul>
+              </div>
             <a className="header-brand" href="./index.html">
               <img src="" className="header-brand-img" alt="tabler logo" />
             </a>
-            <div className="d-flex order-lg-2 ml-auto">
+            <div className="d-flex order-lg-2 ml-auto align-items-around">
+              
+              <div className="row">
+              </div>
               <div className="dropdown d-none d-md-flex">
                 <a className="nav-link icon" data-toggle="dropdown">
                   <i className="fa fa-bell"></i>
                   <span className="nav-unread"></span>
                 </a>
+
                 <div className="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                   <a href="#" className="dropdown-item d-flex">
                     <span className="avatar mr-3 align-self-center" style={{ backgroundImage: "url('demo/faces/male/41.jpg')" }} ></span>
@@ -43,7 +57,7 @@ class Header extends React.Component {
                 </div>
               </div>
               <div className="dropdown">
-                <a href="#" className="nav-link pr-0 leading-none" data-toggle="dropdown">
+                <a href="#" className="nav-link pr-0 leading-none profile-custom" data-toggle="dropdown">
                   <span className="avatar" style={{ backgroundImage: "url('demo/faces/female/1.jpg')" }}></span>
                   <span className="ml-2 d-none d-lg-block">
                     <span className="text-default">Jane Pearson</span>
@@ -74,9 +88,6 @@ class Header extends React.Component {
                 </div>
               </div>
             </div>
-            <a href="#" className="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
-              <span className="header-toggler-icon"></span>
-            </a>
           </div>
         </div>
       </div>
