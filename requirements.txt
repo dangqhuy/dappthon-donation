@@ -1,3 +1,4 @@
 Django
 django-model-utils
 django-rest-framework
+django-cors-headers
