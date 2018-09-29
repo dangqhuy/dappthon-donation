@@ -40,7 +40,7 @@ const fuse = FuseBox.init({
 const bundle = fuse.bundle("app")
     .instructions(" > app.js")
 if (!production) {
-    fuse.dev({ port: 4444, fallback: 'index.html' })
+    fuse.dev({ port: 4444, fallback: '../templates/index.html' })
     bundle.hmr().watch("")
 }
 
