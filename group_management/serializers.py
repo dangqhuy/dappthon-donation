@@ -6,9 +6,10 @@ from . import models
 
 
 class GroupSerializer(serializers.ModelSerializer):
+    
 
     class Meta:
         model = models.Group
-        field = '__all__'
+        fields = '__all__'
 
 
