@@ -1,42 +1,47 @@
-const {
-  FuseBox, SassPlugin, CSSPlugin, QuantumPlugin, CSSResourcePlugin, ImageBase64Plugin, PostCSSPlugin, JSONPlugin
-} = require('fuse-box')
+const { FuseBox, CSSPlugin, ImageBase64Plugin,CSSResourcePlugin, QuantumPlugin } = require("fuse-box");
 
-const development = process.env.NODE_ENV !== 'production'
-  && !process.argv.includes('--production')
+const production = process.env.NODE_ENV === 'production'
+    || process.env.ENV === 'production'
+    || process.argv.includes('--production')
 
 const fuse = FuseBox.init({
-  homeDir: 'src',
-  target: 'browser@es5',
-  output: 'public/$name.js',
-  useTypescriptCompiler: true,
-  plugins: [
-    [ 
-      SassPlugin({ importer: true }),
-      CSSResourcePlugin({
-        dist: "public/img",
-        resolve: (f) => `/static/img/${f}`
-      }),
-      development ? CSSPlugin() : CSSPlugin({
-        outFile: _ => 'public/app.css',
-      }),
+    homeDir: "front-end",
+    target: "browser",
+    output: "public/$name.js",
+    useTypescriptCompiler: true,
+    sourceMaps: true,
 
+    plugins: [
+
+        [CSSResourcePlugin({
+            dist: 'public/css-resources',
+            inline: false,
+        }),
+        CSSPlugin({
+            group: 'app.css',
+            outFile: 'public/app.css',
+            inject: false,
+        }),
     ],
-    !development && QuantumPlugin({
-      uglify: true,
-      css: { clean: true },
-      bakeApiIntoBundle: true
-    }),
-    ImageBase64Plugin(), JSONPlugin()
-  ],
-})
+        ImageBase64Plugin({
+            userDefault: true,
+            dist: 'public/css-resources'
+        }),
 
-const bundle = fuse.bundle('app')
-  .instructions('> index.js')
+        production && QuantumPlugin({
+            bakeApiIntoBundle: 'app',
+            treeshake: true,
+            uglify: true,
+        })
+    ],
+});
 
-if (development) {
-  bundle.hmr({ reload: true }).watch()
-  fuse.dev()
+
+const bundle = fuse.bundle("app")
+    .instructions(" > app.js")
+if (!production) {
+    fuse.dev({ port: 4444, fallback: 'index.html' })
+    bundle.hmr().watch()
 }
 
-fuse.run()
+fuse.run();
