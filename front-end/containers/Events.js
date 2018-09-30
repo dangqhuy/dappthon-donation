@@ -6,39 +6,33 @@ import { API_URL } from '../config'
 class Events extends React.Component {
   state = {
     groups: [],
-    group: {},
+    loading: true,
   };
 
 
-  fetchEvent = () => {
-    fetch(`${API_URL}/api/v1/groups/`, {
-      mode: 'cors',
-      method: 'GET',
-      credentials: 'include',
-
-      headers: {
-        'Content-Type': 'application/json',
-      },
-
-    })
+ fetchEvent = () => {
+     fetch(`${API_URL}/api/v1/groups/1`)
       .then(resp => resp.json())
-      .then(groupsFetch => {
-        this.setState({ groups: groupsFetch })
+      .then(groups => {
+        this.setState({ groups, loading: false })
       })
 
   }
 
   componentDidMount() {
-      this.fetchEvent();
-      this.state.groups.map( groupItem => {
-        if(group.id === 1)
-        this.setState({group: groupItem});
-        console.log(group);
-      })
-
+    this.fetchEvent();
   }
 
   render() {
+    const { groups, loading } = this.state
+    console.log(groups)
+    const name = groups.name
+    const description = groups.description
+    if(loading) {
+      return (
+        <h1>LOADING...</h1>
+      )
+    }
     return (
 
       <div className="col-12">
@@ -62,8 +56,12 @@ class Events extends React.Component {
                 </tr>
               </thead>
               <React.Fragment>
-                <Event name={this.state.group.name} company={"Nam Tran"} created='16-11-2018'
-                  expire='20-11-2018' status={'Pending'} target={10000} balance={800} />
+
+                {groups.events.map(g =>
+                  <Event key={g.id} name={g.title} company={name} created={g.created}
+                    expire='20-11-2018' status={g.status} target={10000} balance={800} />
+                )}
+
               </React.Fragment>
             </table>
           </div>
