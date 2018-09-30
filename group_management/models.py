@@ -22,6 +22,9 @@ class Event(BaseModel):
     end = models.DateTimeField()
     description = models.CharField(max_length=250)
 
+    class Meta:
+        ordering = ['id']
+
 
 class Activity(BaseModel):
     title = models.CharField('Title', max_length=250)
