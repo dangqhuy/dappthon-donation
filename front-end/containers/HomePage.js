@@ -3,22 +3,22 @@ import { Groups } from './Groups'
 import { API_URL } from '../config'
 
 class HomePage extends React.Component {
- 
+
   state = {
-    groups:[]
+    groups: []
   }
 
   fetchGroups = () => {
-    fetch(`${API_URL}/api/v1/groups`,{
+    fetch(`${API_URL}/api/v1/groups`, {
       mode: 'cors',
       method: 'GET',
       credentials: 'include',
-      
-      headers: {
-         'Content-Type': 'application/json',
-       },
 
-      })
+      headers: {
+        'Content-Type': 'application/json',
+      },
+
+    })
       .then(resp => resp.json())
       .then(groups => {
         this.setState({
@@ -27,7 +27,7 @@ class HomePage extends React.Component {
       })
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.fetchGroups();
   }
 
@@ -37,33 +37,33 @@ class HomePage extends React.Component {
         <div className="container">
           <div className="page-header">
             <h1 className="page-title">
-            company
+              company
             </h1>
-          <div className="page-subtitle">1 - 12 of 1713 photos</div>
-          <div className="page-options d-flex">
-            <div className="input-icon ml-2">
-              <span className="input-icon-addon">
-                <i className="fa fa-search"></i>
-              </span>
-              <input type="text" className="form-control w-10" placeholder="Search company" />
+            <div className="page-subtitle">1 - 12 of 1713 photos</div>
+            <div className="page-options d-flex">
+              <div className="input-icon ml-2">
+                <span className="input-icon-addon">
+                  <i className="fa fa-search"></i>
+                </span>
+                <input type="text" className="form-control w-10" placeholder="Search company" />
+              </div>
             </div>
-          </div>
 
-          <div className="my-3 my-md-5">
-            <div className="row row-cards">
-              <Groups />
+            <div className="my-3 my-md-5">
+              <div className="row row-cards">
+                <Groups />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="my-3 my-md-5">
+          <div className="container">
+            <div className="row row-cards row-deck">
+              <Groups groups={this.state.groups} />
             </div>
           </div>
         </div>
       </div>
-      <div className="my-3 my-md-5">
-        <div className="container">
-          <div className="row row-cards row-deck">
-            <Groups groups={this.state.groups}/>
-          </div>
-        </div>
-      </div>
-    </div>
     )
   }
 }

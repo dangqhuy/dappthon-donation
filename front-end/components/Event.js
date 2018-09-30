@@ -9,11 +9,11 @@ const Event = (props) => {
         <td><span className="text-muted">001401</span></td>
         <td><a href="invoice.html" className="text-inherit">{props.name}</a></td>
         <td>
-        {props.company}</td>
+          {props.company}</td>
         <td>
-        {props.created}</td>
+          {props.created}</td>
         <td>
-        {props.expire}</td>
+          {props.expire}</td>
         <td>
           <span className="status-icon bg-success"></span> {props.status} </td>
         <td>${props.target}</td>
