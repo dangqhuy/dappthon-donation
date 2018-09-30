@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Event from '../components/Event'
 import { API_URL } from '../config'
+import { Link } from 'react-router-dom'
 
 
 class Events extends React.Component {
@@ -10,8 +11,8 @@ class Events extends React.Component {
   };
 
 
- fetchEvent = () => {
-     fetch(`${API_URL}/api/v1/groups/1`)
+  fetchEvent = () => {
+    fetch(`${API_URL}/api/v1/groups/1`)
       .then(resp => resp.json())
       .then(groups => {
         this.setState({ groups, loading: false })
@@ -28,7 +29,7 @@ class Events extends React.Component {
     console.log(groups)
     const name = groups.name
     const description = groups.description
-    if(loading) {
+    if (loading) {
       return (
         <h1>LOADING...</h1>
       )
@@ -57,10 +58,13 @@ class Events extends React.Component {
               </thead>
               <React.Fragment>
 
-                {groups.events.map(g =>
-                  <Event key={g.id} name={g.title} company={name} created={g.created}
-                    expire='20-11-2018' status={g.status} target={10000} balance={800} />
-                )}
+                {groups.events.map(g => {
+                  return (
+                    <Link to={`/events/${g.id}`} key={g.id}>
+                      <Event key={g.id} name={g.title} company={name} created={g.created}
+                        expire='20-11-2018' status={g.status} target={10000} balance={800} />
+                    </Link>)
+                })}
 
               </React.Fragment>
             </table>

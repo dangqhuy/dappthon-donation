@@ -15,7 +15,7 @@ class App extends React.Component {
                     <Header/>
                     <Route exact path="/" component={HomePage}/>
                     <Route path="/groups/:id" component={Events}/>
-                    <Route path="/events" component={EventDetail} />
+                    <Route path="/events/:id" component={EventDetail} />
                 </div>
             </div>
         )
