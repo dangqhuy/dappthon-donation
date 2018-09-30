@@ -11,3 +11,8 @@ class ListGroupAPIView(generics.ListAPIView):
 class DetailGroupAPIView(generics.RetrieveAPIView):
     queryset = models.Group.objects.all()
     serializer_class = serializers.GroupSerializer
+
+
+class DetailEventAPIView(generics.RetrieveAPIView):
+    queryset = models.Event.objects.all()
+    serializer_class = serializers.EventSerializer
