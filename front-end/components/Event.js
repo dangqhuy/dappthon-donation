@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 var distanceInWordsToNow = require('date-fns/distance_in_words_to_now')
 const Event = (props) => {
-  console.log(props)
   return (
     <tbody>
     <tr>
