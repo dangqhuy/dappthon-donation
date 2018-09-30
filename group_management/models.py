@@ -25,6 +25,6 @@ class Event(BaseModel):
 
 class Activity(BaseModel):
     title = models.CharField('Title', max_length=250)
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, related_name='activities', on_delete=models.CASCADE)
     description = models.CharField(max_length=250)
-    status = models.CharField('Status', max_length=250)
+    status = models.BooleanField('Status')

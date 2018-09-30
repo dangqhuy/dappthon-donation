@@ -34,7 +34,7 @@ class Plans extends React.Component {
         </a>
         <div>
 
-          {this.state.success ? <button className='btn btn-danger'>Donate</button> 
+          {!this.state.success ? <button className='btn btn-danger'>Donate</button> 
           : <button className='btn btn-success' disabled >Succeed</button>}
         </div>
       </li>
