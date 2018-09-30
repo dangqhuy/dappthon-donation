@@ -13,7 +13,7 @@
  */
 var mnemonic = "slide exact bottom ramp public depth floor december weird skull index damp";
 
-var HDWalletProvider = require("truffle-hdwallet-provider");
+// var HDWalletProvider = require("truffle-hdwallet-provider");
 
 module.exports = {
   networks: {
@@ -22,13 +22,13 @@ module.exports = {
       port: 7545,
       network_id: "5777" // Match any network id
     },
-    ropsten: {
-      provider: function () {
-        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/5987ae56c03e4bcba7064b9291f8b2bf")
-      },
-      network_id: '3',
-      gas: 4500000,
-      gasPrice: 10000000000,
-    },
+    // ropsten: {
+    //   provider: function () {
+    //     return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/5987ae56c03e4bcba7064b9291f8b2bf")
+    //   },
+    //   network_id: '3',
+    //   gas: 4500000,
+    //   gasPrice: 10000000000,
+    // },
   }
 };
