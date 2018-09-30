@@ -31,7 +31,6 @@ class Events extends React.Component {
 
   render() {
     const { groups, loading } = this.state
-    console.log(groups)
     const name = groups.name
     const description = groups.description
     if (loading) {

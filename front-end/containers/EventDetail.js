@@ -26,7 +26,6 @@ class EventDetail extends React.Component {
 
   render() {
     const { event, loading } = this.state
-    console.log(event)
     if (loading) {
       return (
         <h1>LOADING</h1>
