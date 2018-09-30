@@ -18,7 +18,6 @@ class Events extends React.Component {
       .then(groups => {
         this.setState({ groups, loading: false })
       })
-
   }
 
   componentDidMount() {
@@ -62,10 +61,10 @@ class Events extends React.Component {
               </thead>
               <React.Fragment>
 
-                {groups.events.map(g => {
+                {this.state.groups.events.map(g => {
                   return (
-                      <Event key={g.id} name={g.title} company={name} onClick={() => handleEvent()} created={g.created}
-                        expire='20-11-2018' status={g.status} target={10000} balance={800} />
+                    <Event key={g.id} name={g.title} requestKey={g.id} company={name} onClick={() => handleEvent()} created={g.created}
+                      expire='20-11-2018' status={g.status} target={10000} balance={800} />
                   )
                 })}
 

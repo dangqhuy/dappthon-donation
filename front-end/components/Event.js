@@ -6,7 +6,7 @@ const Event = (props) => {
   return (
     <tbody>
     <tr>
-        <td><span className="text-muted">001401</span></td>
+        <td><span className="">{props.requestKey}</span></td>
         <td>{props.name}</td>
         <td>
           {props.company}</td>
@@ -19,7 +19,7 @@ const Event = (props) => {
         <td>${props.target}</td>
         <td>${props.balance}</td>
         <td className="text-right">
-          <Link to={`/events/${props.id}`} className="btn btn-secondary btn-sm">Detail</Link>
+          <Link to={`/events/${props.requestKey}`} className="btn btn-secondary btn-sm">Detail</Link>
         </td>
       </tr>
     </tbody>
