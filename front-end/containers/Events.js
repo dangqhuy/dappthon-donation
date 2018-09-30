@@ -6,9 +6,7 @@ class Events extends React.Component {
 
   render() {
     return (
-      <div className="my-3 my-md-5">
-        <div className="container">
-          <div className="row row-cards row-deck">
+      
             <div className="col-12">
               <div className="card">
                 <div className="card-header">
@@ -52,9 +50,6 @@ class Events extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
     )
   }
 }
