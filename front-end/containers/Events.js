@@ -4,14 +4,17 @@ import { API_URL } from '../config'
 
 
 class Events extends React.Component {
-  state = {
-    groups: [],
-    group: {},
-  };
+  constructor() {
+    super();
+    this.state = {
+      groups: [],
+      group: null,
+    };
+  }
 
 
   fetchEvent = () => {
-    fetch(`${API_URL}/api/v1/groups/`, {
+    fetch(`${API_URL}/api/v1/groups`, {
       mode: 'cors',
       method: 'GET',
       credentials: 'include',
@@ -23,19 +26,15 @@ class Events extends React.Component {
     })
       .then(resp => resp.json())
       .then(groupsFetch => {
-        this.setState({ groups: groupsFetch })
+        this.setState({
+          groups: groupsFetch
+        })
       })
 
   }
 
   componentDidMount() {
-      this.fetchEvent();
-      this.state.groups.map( groupItem => {
-        if(group.id === 1)
-        this.setState({group: groupItem});
-        console.log(group);
-      })
-
+    this.fetchEvent();
   }
 
   render() {
@@ -50,7 +49,7 @@ class Events extends React.Component {
             <table className="table card-table table-vcenter text-nowrap">
               <thead>
                 <tr>
-                  <th className="w-1">No.</th>
+                  <th className="w-1">{this.state.groups.id}</th>
                   <th>Name</th>
                   <th>Company</th>
                   <th>Created</th>
@@ -62,8 +61,8 @@ class Events extends React.Component {
                 </tr>
               </thead>
               <React.Fragment>
-                <Event name={this.state.group.name} company={"Nam Tran"} created='16-11-2018'
-                  expire='20-11-2018' status={'Pending'} target={10000} balance={800} />
+                  <Event name={item.name} company={"Nam Tran"} created='16-11-2018'
+                    expire='20-11-2018' status={'Pending'} target={10000} balance={800} />
               </React.Fragment>
             </table>
           </div>
