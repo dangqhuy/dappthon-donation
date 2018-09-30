@@ -24,7 +24,6 @@ class HomePage extends React.Component {
         this.setState({
           groups: groups
         })
-        console.log(groups)
       })
   }
 
@@ -54,7 +53,7 @@ class HomePage extends React.Component {
       <div className="my-3 my-md-5">
         <div className="container">
           <div className="row row-cards row-deck">
-            <Groups/>
+            <Groups groups={this.state.groups}/>
           </div>
         </div>
       </div>
