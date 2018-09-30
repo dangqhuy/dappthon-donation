@@ -19,7 +19,7 @@ class GroupSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Group
-        exclude=['created', 'modified', 'is_removed']
+        exclude=['modified', 'is_removed']
 
     def get_events_count(self, model):
         return model.events.count()
