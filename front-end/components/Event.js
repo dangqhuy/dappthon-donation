@@ -7,7 +7,7 @@ const Event = (props) => {
     <tbody>
       <tr>
         <td><span className="text-muted">001401</span></td>
-        <td><a href="invoice.html" className="text-inherit">{props.name}</a></td>
+        <td>{props.name}</td>
         <td>
           {props.company}</td>
         <td>

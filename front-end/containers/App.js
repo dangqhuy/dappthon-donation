@@ -13,8 +13,7 @@ class App extends React.Component {
                 <div className="page-main">
                     <Header/>
                     <Route exact path="/" component={HomePage}/>
-                    <Route path='/groups/:id' component={GroupDetail}/>
-                    <Route path="/events/:id" component={Events}/>
+                    <Route path="/groups/:id" component={Events}/>
                 </div>
             </div>
         )
