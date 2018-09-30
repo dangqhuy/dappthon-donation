@@ -3,12 +3,14 @@ import history from '../History'
 import * as image3 from '../assets/images/3.jpg'
 import * as image2 from '../assets/images/alex.jpg'
 
+const API_URL = window.location.host.includes('localhost')
+  ? 'http://localhost:1337'
+  : `${window.location.protocol}//${window.location.host}`
 
 const Group = (props) => {
-<<<<<<< HEAD
 
   return(
-      <div className= "col-sm-6 col-lg-4" onClick={() => history.push(`/groups/${groupId}`)}>
+      <div className= "col-sm-6 col-lg-4" onClick={() => history.push(`/groups/${props.id}`)}>
             <div className="card p-3">
               <a href="javascript:void(0)" className="mb-3">
                 <img src={image2} alt="Photo by Nathan Guerrero" className="rounded" />
@@ -25,49 +27,37 @@ const Group = (props) => {
                   <a href="#" className="icon"><i className="fa fa-eye mr-1"></i> 112</a>
                     <a href="#" className="icon d-none d-md-inline-block ml-3"><i className="fa fa-heart mr-1"></i>
                       42</a>
-                </div>
+                </div>props
               </div>
             </div>
             </div>
-=======
-  return (
-
-    <div className="col-sm-6 col-lg-4">
-      <div className="card p-3">
-        <a href="javascript:void(0)" className="mb-3">
-          <img src={image2} alt="Photo by Nathan Guerrero" className="rounded" />
-        </a>
-        <div className="d-flex align-items-center px-2">
-          <div className="">
-            <img className="avatar avatar-md mr-3" src={image3}></img>
-          </div>
-          <div>
-            <div>Nathan Guerrero</div>
-            <small className="d-block text-muted">12 days ago</small>
-          </div>
-          <div className="ml-auto text-muted">
-            <a href="#" className="icon"><i className="fa fa-eye mr-1"></i> 112</a>
-            <a href="#" className="icon d-none d-md-inline-block ml-3"><i className="fa fa-heart mr-1"></i>
-              42</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
->>>>>>> 7aa7adffc837c75c7ae75310aec83392a781236e
   )
 }
 
 
 class Groups extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      groups: [],
+    }
+  }
+
+  fetchGroups() {
+    fetch(`${API_URL}/api/v1/groups`)
+      .then(resp => resp.json())
+      .then(groups => this.setState({ groups }))
+  }
+  componentDidMount() {
+    this.fetchGroups()
+  }
   render() {
-    const { groups } = this.props;
+    const { groups } = this.state;
     console.log(groups)
     return (
       <React.Fragment>
-<<<<<<< HEAD
-        {groups.map(group => 
+        {groups.map(group =>
           <Group
             key={group.id}
             id={group.id}
@@ -75,12 +65,9 @@ class Groups extends React.Component {
             description={group.description}
             events_count={group.events_count}
             created={group.created}
-          />  
+          />
         )
         }
-=======
-        <Group />
->>>>>>> 7aa7adffc837c75c7ae75310aec83392a781236e
       </React.Fragment>
     )
   }
@@ -88,7 +75,6 @@ class Groups extends React.Component {
 }
 
 const GroupDetail = (props) => {
-<<<<<<< HEAD
 
     // const { group }
     // return (
@@ -162,16 +148,8 @@ const GroupDetail = (props) => {
     //       </div>
     //     </div>
     //   </div>
-    )
-} 
-=======
-  return (
-    <div>
-
-    </div>
-  )
+    // )
 }
->>>>>>> 7aa7adffc837c75c7ae75310aec83392a781236e
 
 
 export {
