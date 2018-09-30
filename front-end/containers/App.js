@@ -5,6 +5,7 @@ import HomePage from './HomePage'
 import Events from './Events'
 import { Route ,Switch} from 'react-router-dom'
 import { GroupDetail } from './Groups'
+import EventDetail from './EventDetail'
 
 class App extends React.Component {
     render() {
@@ -14,6 +15,7 @@ class App extends React.Component {
                     <Header/>
                     <Route exact path="/" component={HomePage}/>
                     <Route path="/groups/:id" component={Events}/>
+                    <Route path="/events" component={EventDetail} />
                 </div>
             </div>
         )
