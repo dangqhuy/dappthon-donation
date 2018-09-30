@@ -2,6 +2,8 @@ import * as React from 'react'
 import Plans from '../components/Plans'
 import { API_URL } from '../config'
 
+const id = window.location.pathname.split('/')[2]
+
 class EventDetail extends React.Component {
 
   constructor(props) {
@@ -13,7 +15,7 @@ class EventDetail extends React.Component {
   }
 
   fetchDetailEvent() {
-    fetch(`${API_URL}/api/v1/events/1`)
+    fetch(`${API_URL}/api/v1/events/${id}`)
       .then(resp => resp.json())
       .then(event => this.setState({ event, loading: false }))
   }
