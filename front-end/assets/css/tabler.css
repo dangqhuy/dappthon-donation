@@ -64,6 +64,10 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
   display: block;
 }
 
+.timeline-custom {
+  background-color: #f9f9f9;
+}
+
 body {
   margin: 0;
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;

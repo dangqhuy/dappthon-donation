@@ -10,26 +10,22 @@ class Header extends React.Component {
           <div className="col-lg order-lg-first">
                 <ul className="nav nav-tabs border-0 flex-column flex-lg-row">
                   <li className="nav-item">
-                    <NavLink to="/" className="nav-link"><i className="fa fa-home"></i> Home</NavLink>
+                    <NavLink to="/" className="nav-link text-"><i className="fa fa-home"></i> Home</NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink to="/events/:id" className="nav-link"><i className="fa fa-bars"></i>Events</NavLink>
                   </li>
+                  <li className="nav-item">
+                    <NavLink to="/detail" className="nav-link"><i className="fa fa-newspaper-o"></i>Event Detail</NavLink>
+                  </li>
                 </ul>
               </div>
-            <a className="header-brand" href="./index.html">
-              <img src="" className="header-brand-img" alt="tabler logo" />
-            </a>
+        
             <div className="d-flex order-lg-2 ml-auto align-items-around">
               
               <div className="row">
               </div>
               <div className="dropdown d-none d-md-flex">
-                <a className="nav-link icon" data-toggle="dropdown">
-                  <i className="fa fa-bell"></i>
-                  <span className="nav-unread"></span>
-                </a>
-
                 <div className="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                   <a href="#" className="dropdown-item d-flex">
                     <span className="avatar mr-3 align-self-center" style={{ backgroundImage: "url('demo/faces/male/41.jpg')" }} ></span>
