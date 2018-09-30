@@ -30,7 +30,7 @@ class Plans extends React.Component {
         <a href="#" className="justify-content-between text-dark">
           <div className="timeline-badge bg-red"></div>
           {this.state.title}
-          <div className="timeline-time">{this.state.balance}</div>
+          <div className="timeline-time">$ {this.state.balance}</div>
         </a>
         <div>
 

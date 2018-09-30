@@ -12,12 +12,6 @@ class Header extends React.Component {
                   <li className="nav-item">
                     <NavLink to="/" className="nav-link text-"><i className="fa fa-home"></i> Home</NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink to="/events/:id" className="nav-link"><i className="fa fa-bars"></i>Events</NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink to="/detail" className="nav-link"><i className="fa fa-newspaper-o"></i>Event Detail</NavLink>
-                  </li>
                 </ul>
               </div>
         

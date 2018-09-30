@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Event = (props) => {
   return (
     <tbody>
-      <tr>
+    <tr>
         <td><span className="text-muted">001401</span></td>
         <td>{props.name}</td>
         <td>
@@ -19,7 +19,7 @@ const Event = (props) => {
         <td>${props.target}</td>
         <td>${props.balance}</td>
         <td className="text-right">
-          <a href="#" className="btn btn-secondary btn-sm">Donate</a>
+          <Link to="/events/1" className="btn btn-secondary btn-sm">Detail</Link>
         </td>
       </tr>
     </tbody>

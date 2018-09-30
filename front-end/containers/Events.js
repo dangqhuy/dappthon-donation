@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 class Events extends React.Component {
+
   state = {
     groups: [],
     loading: true,
@@ -22,6 +23,10 @@ class Events extends React.Component {
 
   componentDidMount() {
     this.fetchEvent();
+  }
+
+  handleEvent = event => {
+    alert("add");
   }
 
   render() {
@@ -60,10 +65,9 @@ class Events extends React.Component {
 
                 {groups.events.map(g => {
                   return (
-                    <Link to={`/events/${g.id}`} key={g.id}>
-                      <Event key={g.id} name={g.title} company={name} created={g.created}
+                      <Event key={g.id} name={g.title} company={name} onClick={() => handleEvent()} created={g.created}
                         expire='20-11-2018' status={g.status} target={10000} balance={800} />
-                    </Link>)
+                  )
                 })}
 
               </React.Fragment>
