@@ -17,7 +17,7 @@ var distanceInWordsToNow = require('date-fns/distance_in_words_to_now')const Eve
         <td>${props.target}</td>
         <td>${props.balance}</td>
         <td className="text-right">
-          <Link to="/events/1" className="btn btn-secondary btn-sm">Detail</Link>
+          <Link to={`/events/${props.id}`} className="btn btn-secondary btn-sm">Detail</Link>
         </td>
       </tr>
     </tbody>
