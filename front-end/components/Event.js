@@ -4,15 +4,25 @@ import { Link } from 'react-router-dom'
 
 const Event = (props) => {
   return (
-    <li className='timeline-item'>
-      <div className='timeline-badge bg-red'>
-      </div>
-      <h4 className='mb-0'>
-      <Link to={`/courses/${props.eventId}/lessons/${props.id}`}>
-        {props.title}
-      </Link>
-      </h4>
-    </li>
+    <tbody>
+      <tr>
+        <td><span className="text-muted">001401</span></td>
+        <td><a href="invoice.html" className="text-inherit">{props.name}</a></td>
+        <td>
+        {props.company}</td>
+        <td>
+        {props.created}</td>
+        <td>
+        {props.expire}</td>
+        <td>
+          <span className="status-icon bg-success"></span> {props.status} </td>
+        <td>${props.target}</td>
+        <td>${props.balance}</td>
+        <td className="text-right">
+          <a href="#" className="btn btn-secondary btn-sm">Donate</a>
+        </td>
+      </tr>
+    </tbody>
   )
 }
 

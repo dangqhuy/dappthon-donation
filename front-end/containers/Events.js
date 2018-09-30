@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import Event from '../components/Event'
 
 class Events extends React.Component {
 
@@ -29,25 +29,10 @@ class Events extends React.Component {
                         <th></th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td><span className="text-muted">001401</span></td>
-                        <td><a href="invoice.html" className="text-inherit">Design Works</a></td>
-                        <td>
-                          Carlson Limited</td>
-                        <td>
-                          29 Sep 2018</td>
-                        <td>
-                          29 October 2018</td>
-                        <td>
-                          <span className="status-icon bg-success"></span> Paid</td>
-                        <td>$887</td>
-                        <td>$534</td>
-                        <td className="text-right">
-                          <a href="#" className="btn btn-secondary btn-sm">Donate</a>
-                        </td>
-                      </tr>
-                    </tbody>
+                    <React.Fragment>
+                      <Event name={'Nam'} company={"Nam Tran"} created='16-11-2018'
+                      expire='20-11-2018' status={'Pending'} target={10000} balance={800} />
+                    </React.Fragment>
                   </table>
                 </div>
               </div>
@@ -59,4 +44,4 @@ class Events extends React.Component {
   }
 }
 
-export default Events;
+export default Events;  

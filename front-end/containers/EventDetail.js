@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Plan from '../components/Plan'
+import Plans from '../components/Plans'
 
 class EventDetail extends React.Component {
 
@@ -13,8 +13,10 @@ class EventDetail extends React.Component {
               <div className="list-group list-group-transparent mb-0">
                 <div className="timeline-custom">
                   <ul className="timeline">
-                    <Plan/>
-                    <Plan/>
+                    <React.Fragment>
+                      <Plans title={"Vung Tau"} balance={3000} success={true}/>
+                      <Plans title={"Vung Tau"} balance={3000} success={false}/>
+                    </React.Fragment>
                   </ul>
                 </div>
               </div>
@@ -24,9 +26,9 @@ class EventDetail extends React.Component {
                 <div className="card-body">
                   <div className="text-wrap p-lg-6">
                     <h2 className="mt-0 mb-4">Introduction</h2>
-                    <p>We’ve created this admin panel for everyone who wants to create any templates based on our ready components. Our mission is to deliver a user-friendly, clear and easy administration panel, that can be used by both, simple websites and sophisticated systems. The only requirement is a basic HTML and CSS knowledge—as a reward, you’ll be able to manage and visualize different types of data in the easiest possible way!</p>
-                    <h3 id="setup-environment">Setup environment</h3>
-                    <p>To use our build system and run our documentation locally, you’ll need a copy of Tabler’s source files and Node. Follow these steps:</p>
+                    <p>While the Foundation strives to generate its own income and operate in a self-sustaining manner, as non-profit initiative we do rely on the generous donations of like-minded individuals and organisations.!</p>
+                    <h3 id="setup-environment">Details</h3>
+                    <p>We are happy to accept donations of cash or equipment for specific projects or more ‘general’ cash donations to be used where it is most needed. Rest assured that all your contributions are 100% allocated to project delivery.</p>
                     <ol>
                       <li><a href="https://nodejs.org/download/">Download and install Node.js</a>, which we use to manage our dependencies.</li>
                       <li>Navigate to the root <code className="highlighter-rouge">/tabler</code> directory and run <code className="highlighter-rouge">npm install</code> to install our local dependencies listed in <code className="highlighter-rouge">package.json</code>.</li>

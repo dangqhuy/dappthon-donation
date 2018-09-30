@@ -20,19 +20,12 @@ class Header extends React.Component {
                   </li>
                 </ul>
               </div>
-            <a className="header-brand" href="./index.html">
-              <img src="" className="header-brand-img" alt="tabler logo" />
-            </a>
+        
             <div className="d-flex order-lg-2 ml-auto align-items-around">
               
               <div className="row">
               </div>
               <div className="dropdown d-none d-md-flex">
-                <a className="nav-link icon" data-toggle="dropdown">
-                  <i className="fa fa-bell"></i>
-                  <span className="nav-unread"></span>
-                </a>
-
                 <div className="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                   <a href="#" className="dropdown-item d-flex">
                     <span className="avatar mr-3 align-self-center" style={{ backgroundImage: "url('demo/faces/male/41.jpg')" }} ></span>
