@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-
-
-const Event = (props) => {
+var distanceInWordsToNow = require('date-fns/distance_in_words_to_now')const Event = (props) => {
   return (
     <tbody>
     <tr>
@@ -11,7 +9,7 @@ const Event = (props) => {
         <td>
           {props.company}</td>
         <td>
-          {props.created}</td>
+          {distanceInWordsToNow(props.created)} ago</td>
         <td>
           {props.expire}</td>
         <td>
